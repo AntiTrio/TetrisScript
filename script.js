@@ -8,16 +8,12 @@
 // @icon         https://online-tetris.ru/favicon/apple-touch-icon.png
 
 // @require      https://openuserjs.org/src/libs/sizzle/GM_config.js
-
 // @grant        GM_getValue
 // @grant        GM_setValue
-// @grant        GM_getResourceText
 // @grant        GM_addStyle
-// @grant        GM_addElement
 
 // ==/UserScript==
 
-//! Style
 const styles = `
 .theme-mode .dark {
   border-radius: 0px;
@@ -155,9 +151,9 @@ GM_config.init(
 
 
 
-let btn = document.createElement("div");
+var btn = document.createElement('div');
 btn.classList.add("theme", "custom");
-let div = document.querySelector(".theme-mode");
+var div = document.querySelector(".theme-mode");
 div.appendChild(btn);
 
 btn.onclick = () => {
@@ -182,7 +178,3 @@ GM_addStyle(`
 let bod = document.createElement('div');
 bod.classList.add("div1");
 document.body.appendChild(bod);
-
-document.querySelector("#tr_saveBtn").onclick = () => {
-  location.href = location.href;
-};
